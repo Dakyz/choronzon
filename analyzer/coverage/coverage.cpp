@@ -554,8 +554,8 @@ pin_finish(INT32 code, VOID *v)
     LOG("closing fifo");
     close(pipeHandle);
 #elif TARGET_WINDOWS
-    CloseHandle(pipeHandle);
-    CloseHandle(TimeoutEvent);
+    WIN32_API::CloseHandle(pipeHandle);
+    WIN32_API::CloseHandle(TimeoutEvent);
 #else
 #error "This system is not supported."
 #endif
